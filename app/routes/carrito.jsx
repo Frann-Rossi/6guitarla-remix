@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "@remix-run/react";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import styles from "~/styles/carrito.css";
 
 export function links() {
@@ -31,7 +31,7 @@ const Carrito = () => {
 		setTotal(calculoTotal);
 	}, [carrito]);
 	return (
-		<ClientOnly fallback={"Catrgado"}>
+		<ClientOnly fallback={"cargando..."}>
 			{() => (
 				<main className="contenedor">
 					<h1 className="heading">Carrito de Compras</h1>
